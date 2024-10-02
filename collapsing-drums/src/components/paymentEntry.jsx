@@ -8,8 +8,8 @@ const PaymentEntry = () => {
     return (
         <div>
             <h1>
-                product 1 {location.state.order.buyQuantity[0]}
-                product 2 {location.state.order.buyQuantity[1]}
+                Product 1 {location.state.order.buyQuantity[0]}
+                Product 2 {location.state.order.buyQuantity[1]}
             </h1>
         </div>
     );

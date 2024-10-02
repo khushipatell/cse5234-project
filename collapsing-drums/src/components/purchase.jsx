@@ -1,6 +1,8 @@
 import React from "react";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+import Header from "./header";
+import "../css/purchase.css";
 
 const Purchase = () => {
     const [order, setOrder] = useState({
@@ -17,24 +19,58 @@ const Purchase = () => {
     console.log('order: ', order);
 
     return (
-        <div>
+        <div className = "body container-fluid">
+            <Header/>
             <form onSubmit={handleSumbit}>
-                <label>Product 1</label>
-                <input
-                    type="number"
-                    required
-                    onChange={(e) =>
-                        {order.buyQuantity[0] = e.target.value; }}
-                />
+            <div className = "row align-item-start">
+                <div className = "col-md-2">
+                    <label>Product 1</label>
+                        <input
+                            type="number"
+                            required
+                            onChange={(e) =>
+                                {order.buyQuantity[0] = e.target.value; }}
+                        />
+                </div>
                 <br/>
-                <label>Prodct 2</label>
-                <input
-                    type="number"
-                    required
-                    onChange={(e) => { order.buyQuantity[1] = e.target.value;}}
-                />
+                <div className = "col-md-2">
+                    <label>Product 2</label>
+                        <input
+                            type="number"
+                            required
+                            onChange={(e) => { order.buyQuantity[1] = e.target.value;}}
+                        />
+                </div>
+                <br/>
+                <div className = "col-md-2">
+                    <label>Product 3</label>
+                        <input
+                            type="number"
+                            required
+                            onChange={(e) => { order.buyQuantity[2] = e.target.value;}}
+                        />
+                </div>
+                <br/>
+                <div className = "col-md-2">
+                    <label>Product 4</label>
+                        <input
+                            type="number"
+                            required
+                            onChange={(e) => { order.buyQuantity[3] = e.target.value;}}
+                        />
+                </div>
+                <br/>                   
+                <div className = "col-md-2">
+                    <label>Product 5</label>
+                    <input
+                        type="number"
+                        required
+                        onChange={(e) => { order.buyQuantity[5] = e.target.value;}}
+                    />
+                </div>
                 <br/>
                 <button className='button'>Pay</button>
+                </div>
             </form>
         </div>
     );
