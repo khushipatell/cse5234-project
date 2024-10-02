@@ -12,13 +12,13 @@ const Purchase = () => {
 
     const handleSumbit = (e) => {
         navigate('/purchase/paymentEntry', {order: order, setOrder: setOrder}); 
-    }
+    } 
 
     console.log('order: ', order);
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSumbit}>
                 <label>Product 1</label>
                 <input
                     type="number"
