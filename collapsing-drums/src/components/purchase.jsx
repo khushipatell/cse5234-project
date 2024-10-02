@@ -65,7 +65,7 @@ const Purchase = () => {
                     <input
                         type="number"
                         required
-                        onChange={(e) => { order.buyQuantity[5] = e.target.value;}}
+                        onChange={(e) => { order.buyQuantity[4] = e.target.value;}}
                     />
                 </div>
                 <br/>
