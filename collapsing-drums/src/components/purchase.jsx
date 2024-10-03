@@ -10,9 +10,14 @@ const Purchase = () => {
 
     const navigate = useNavigate();
 
+    // const handleSumbit = (e) => {
+    //     navigate('/purchase/paymentEntry', {order: order, setOrder: setOrder}); 
+    // } 
+
     const handleSumbit = (e) => {
-        navigate('/purchase/paymentEntry', {order: order, setOrder: setOrder}); 
-    } 
+    e.preventDefault();
+    navigate('/paymentEntry', { state: { order: order } }); 
+};
 
     console.log('order: ', order);
 
