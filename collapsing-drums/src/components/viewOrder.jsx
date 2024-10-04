@@ -11,7 +11,7 @@ function ViewOrder() {
     const navigate = useNavigate();
 
     const handleSumbit = (e) => {
-        navigate('/viewConfirmation', { state: { order: data.order }}); 
+        navigate('/viewConfirmation', { state: { order: data.order, price: totalPrice}}); 
     }
     
     const totalPrice = ((location.state.order.buyQuantity[0] * pricePerItem[0]) + (location.state.order.buyQuantity[1] * pricePerItem[1]) + (location.state.order.buyQuantity[2] * pricePerItem[2]) + (location.state.order.buyQuantity[3] * pricePerItem[3]) + (location.state.order.buyQuantity[4] * pricePerItem[4]));
