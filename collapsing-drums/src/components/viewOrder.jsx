@@ -37,6 +37,7 @@ function ViewOrder() {
             <hr class="secondaryDivider"/>
             <h2>Items Total</h2>
                 <p>Total Price: ${totalPrice}</p>
+            <button className='button' onClick={handleSumbit}>Confirm Order</button>
         </div>
     );
 }
