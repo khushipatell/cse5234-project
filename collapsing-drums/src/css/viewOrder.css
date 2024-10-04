@@ -1,0 +1,14 @@
+.mainDivider 
+{
+    background-color: rgb(0, 0, 0);
+    border: 0 none;
+    color: rgb(0, 0, 0);
+    height: 3px;
+}
+.secondaryDivider 
+{
+    background-color: rgb(0, 0, 0);
+    border: 0 none;
+    color: rgb(0, 0, 0);
+    height: 1px;
+}

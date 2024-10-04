@@ -8,7 +8,7 @@ function ShippingEntry() {
     const navigate = useNavigate();
 
     const handleSumbit = (e) => {
-        navigate('/purchase/viewOrder', { state: { order: data.order }}); 
+        navigate('/viewOrder', { state: { order: data.order }}); 
     } 
 
     return (
