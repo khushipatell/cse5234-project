@@ -67,7 +67,6 @@ function ShippingEntry() {
                 />
                 </div>
                 <br />
-                <div> Payment Total Cost: ${data.totalCost ? data.totalCost.toFixed(2) : '0.00'}</div>
                 <button className='shipping-button'>Review Order</button>
             </form>
         </div>
