@@ -1,15 +1,26 @@
-.topbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    box-sizing: border-box;
-    width: 100%;
-    height: 60px;
-    background-color: #033600;
+.header {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    color: black;
-    box-shadow: 0 0 2px #033600;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #0d1f22;
+    color: #899878;
+    height: 60px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-title {
+    font-size: 24px;
+    margin: 0;
+}
+
+.shopping-cart {
+    font-size: 40px;
+    cursor: pointer;
+    color: #899878;
+}
+
+.shopping-cart:hover {
+    color:#69140e;
+    transition: color 0.3s ease;
 }

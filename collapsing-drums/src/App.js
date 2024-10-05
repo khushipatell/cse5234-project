@@ -15,10 +15,10 @@ function App() {
         <div className="content">
           <Routes>
             <Route path='/purchase' element={<Purchase/>}/>
-            <Route path='/paymentEntry' element={<PaymentEntry/>}/>
-            <Route path='/shippingEntry' element={<ShippingEntry/>}/>
-            <Route path='/viewOrder' element={<ViewOrder/>}/>
-            <Route path='/viewConfirmation' element={<ViewConfirmation/>}/>
+            <Route path='/purchase/paymentEntry' element={<PaymentEntry/>}/>
+            <Route path='/purchase/shippingEntry' element={<ShippingEntry/>}/>
+            <Route path='/purchase/viewOrder' element={<ViewOrder/>}/>
+            <Route path='/purchase/viewConfirmation' element={<ViewConfirmation/>}/>
             <Route path='/' element={<Navigate replace to="/purchase"/>}/>
           </Routes>
         </div>

@@ -1,11 +1,59 @@
-.body {
-    background-color: #eff9fe;
+/* Overall form styling */
+.purchase-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.row {
-    border-color: black;
+/* Flexbox row to align products side by side in rows */
+.product-row {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next line */
+    justify-content: center;
+    gap: 20px; /* Space between product items */
 }
 
-.col-md-2 {
-    border-color: black;
+/* Style for individual product */
+.product-item {
+    width: 30%; /* Each product takes 30% of the row to fit 3 items per row */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #899878;
+    border-radius: 10px;
+    background-color: #e8f5d9;
+    box-shadow: 0 2ps 5ps rgba(0,0,0,0.1);
+    margin-bottom: 20px; /* Space between rows */
+}
+
+/* Ensure image is responsive and smaller */
+.product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.product-item p {
+    margin: 5px 0;
+    text-align: center;
+}
+
+.pay-button {
+    padding: 10px 20px;
+    background-color: #0d1f22;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.pay-button:hover {
+    background-color:#69140e;
+    transition: color 0.3s ease;
 }

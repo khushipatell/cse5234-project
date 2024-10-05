@@ -1,45 +1,67 @@
 import React from "react";
-import {useNavigate, useLocation} from 'react-router-dom';
-import '../css/viewOrder.css';
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import Header from "./header";
+import "../css/viewOrder.css"; // Ensure you have a CSS file for styling
 
-function ViewOrder() {
+const Cart = () => {
     const location = useLocation();
-    const data = location.state || { order: {} };
-    const pricePerItem = [2,3,2,4,6];
-
-
     const navigate = useNavigate();
+    const { order } = location.state || { order: {} };
 
-    const handleSumbit = (e) => {
-        navigate('/viewConfirmation', { state: { order: data.order, price: totalPrice}}); 
-    }
-    
-    const totalPrice = ((location.state.order.buyQuantity[0] * pricePerItem[0]) + (location.state.order.buyQuantity[1] * pricePerItem[1]) + (location.state.order.buyQuantity[2] * pricePerItem[2]) + (location.state.order.buyQuantity[3] * pricePerItem[3]) + (location.state.order.buyQuantity[4] * pricePerItem[4]));
+    // Products array similar to the Purchase component
+    const products = [
+        { name: "Neutral Drum Set", image: "/img/DrumSet.jpeg", cost: 700 },
+        { name: "Neutral Guitar", image: "/img/Guitar.jpeg", cost: 100 },
+        { name: "Baby Pink Keyboard", image: "/img/PinkKeyboard.jpeg", cost: 200 },
+        { name: "Blue Violin", image: "/img/BlueViolin.jpeg", cost: 300 },
+        { name: "Green Tamborine", image: "/img/GreenTamb.jpeg", cost: 50 }
+    ];
+
+    const [totalCost, setTotalCost] = useState(0);
+
+    // Calculate total cost based on quantities
+    const calculateTotalCost = () => {
+        return products.reduce((total, product, index) => {
+            return total + product.cost * order.buyQuantity[index];
+        }, 0);
+    };
+
+    useEffect(() => {
+        const total = calculateTotalCost();
+        setTotalCost(total);
+    }, [order]); 
+
+    const handleCheckout = () => {
+        console.log("Total Cost:", totalCost); // Debugging line
+        navigate("/purchase/paymentEntry", {state: {order: order, totalCost: totalCost } }); // Navigate to checkout page
+    };
 
     return (
-        <div>
-            <h1>Items Summary</h1>
-            <hr class="mainDivider"/>
-            <h2>Product 1</h2>
-                <p>Quantity: {location.state.order.buyQuantity[0]}</p>
-            <hr class="secondaryDivider"/>
-            <h2>Product 2</h2>
-                <p>Quantity: {location.state.order.buyQuantity[1]}</p>
-            <hr class="secondaryDivider"/>
-            <h2>Product 3</h2>
-                <p>Quantity: {location.state.order.buyQuantity[2]}</p>
-            <hr class="secondaryDivider"/>
-            <h2>Product 4</h2>
-                <p>Quantity: {location.state.order.buyQuantity[3]}</p>
-            <hr class="secondaryDivider"/>
-            <h2>Product 5</h2>
-                <p>Quantity: {location.state.order.buyQuantity[4]}</p>
-            <hr class="secondaryDivider"/>
-            <h2>Items Total</h2>
-                <p>Total Price: ${totalPrice}</p>
-            <button className='button' onClick={handleSumbit}>Confirm Order</button>
+        <div className="cart-container body">
+            <Header />
+            <h1>Your Shopping Cart</h1>
+            <div className="cart-items">
+                {products.map((product, index) => {
+                    const quantity = order.buyQuantity[index];
+                    if (quantity > 0) {
+                        return (
+                            <div key={index} className="view-row">
+                                    <div className="view-name">{product.name}</div>
+                                    <img src={product.image} alt={product.name} className="view-image" />
+                                    <div className="view-price">Price: ${product.cost}</div>
+                                    <div className="view-quantity">Quantity: {quantity}</div>
+                                    <p>Total: ${(product.cost * quantity).toFixed(2)}</p>
+                            </div>
+                        );
+                    }
+                    return null; // Skip products with 0 quantity
+                })}
+            </div>
+            <h2>Total Cost: ${totalCost.toFixed(2)}</h2>
+            <button className="checkout-button" onClick={handleCheckout}>Proceed to Checkout</button>
         </div>
     );
-}
+};
 
-export default ViewOrder;
+export default Cart;
