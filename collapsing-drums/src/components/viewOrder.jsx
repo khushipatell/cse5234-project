@@ -2,7 +2,8 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Header from "./header";
-import "../css/viewOrder.css"; // Ensure you have a CSS file for styling
+import "../css/viewOrder.css";
+import "../css/site.css";
 
 const Cart = () => {
     const location = useLocation();
@@ -59,7 +60,7 @@ const Cart = () => {
                 })}
             </div>
             <h2>Total Cost: ${totalCost.toFixed(2)}</h2>
-            <button className="checkout-button" onClick={handleCheckout}>Proceed to Checkout</button>
+            <button className="button" onClick={handleCheckout}>Proceed to Checkout</button>
         </div>
     );
 };

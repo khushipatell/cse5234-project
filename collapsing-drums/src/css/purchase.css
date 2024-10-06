@@ -42,18 +42,3 @@
     margin: 5px 0;
     text-align: center;
 }
-
-.pay-button {
-    padding: 10px 20px;
-    background-color: #0d1f22;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-.pay-button:hover {
-    background-color:#69140e;
-    transition: color 0.3s ease;
-}

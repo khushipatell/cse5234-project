@@ -38,17 +38,3 @@ input:focus {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle shadow on focus */
 }
 
-.payment-button {
-    background-color: #0d1f22; 
-    color: white; /* Text color */
-    padding: 10px; /* Space inside button */
-    border: none; /* No border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Change cursor to pointer */
-    font-size: 16px; /* Font size */
-}
-
-.payment-button:hover {
-    background-color:#69140e;
-    transition: color 0.3s ease;
-}

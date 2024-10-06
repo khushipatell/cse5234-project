@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from "./header";
 import { useNavigate, useLocation } from 'react-router-dom';
 import "../css/paymentEntry.css";
+import "../css/site.css";
 
 const PaymentEntry = () => {
     const navigate = useNavigate(); 
@@ -55,7 +56,7 @@ const PaymentEntry = () => {
                 </div>
                 <br />
                 <div>Total Cost: ${data.totalCost ? data.totalCost.toFixed(2) : '0.00'}</div>
-                <button type="submit" className="payment-button">Proceed to Shipping</button>
+                <button type="submit" className="button">Proceed to Shipping</button>
             </form>
         </div>
     );

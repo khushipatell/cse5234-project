@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./header";
 import {useNavigate, useLocation} from 'react-router-dom';
 import "../css/shippingEntry.css";
+import "../css/site.css";
 
 function ShippingEntry() {
     const location = useLocation();
@@ -67,7 +68,7 @@ function ShippingEntry() {
                 />
                 </div>
                 <br />
-                <button className='shipping-button'>Review Order</button>
+                <button className='button'>Review Order</button>
             </form>
         </div>
     );

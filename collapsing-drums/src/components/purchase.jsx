@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import Header from "./header";
+import "../css/site.css";
 import "../css/purchase.css";
 
 const Purchase = () => {
@@ -50,9 +51,9 @@ const Purchase = () => {
                     </div>
                 ))}
             </div>
-            <button type="submit" className="pay-button">Purchase</button>
+            <button type="submit" className="button">Purchase</button>
         </form>
-    </div>
+        </div>
     );
 };
 

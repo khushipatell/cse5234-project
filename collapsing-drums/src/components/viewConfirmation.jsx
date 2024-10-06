@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./header";
 import {useNavigate, useLocation} from 'react-router-dom';
 import "../css/viewConfirmation.css";
+import "../css/site.css";
 
 function ViewConfirmation() {
     const location = useLocation();
@@ -23,7 +24,7 @@ function ViewConfirmation() {
            <h5>Total Paid: ${location.state.totalCost}</h5>
            <h5>Payment Under: {location.state.order.card_holder_name}</h5>
            <h5>Shipping Info: {location.state.order.address_1} {location.state.order.city} {location.state.order.state} {location.state.order.zip}</h5>
-           <button className='confirm-button' onClick={handleSumbit}>Done</button>
+           <button className='button' onClick={handleSumbit}>Done</button>
         </div>
     );
 }
