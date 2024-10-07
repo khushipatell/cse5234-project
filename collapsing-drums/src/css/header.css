@@ -2,20 +2,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #5f0f40;
     color: white;
     height: 100px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.header-logo{
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-col-md-4, col-md-2 {
-    border: 1px solid white;
 }
 
 .logo {
@@ -33,16 +22,12 @@ h1 {
     color: white;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     padding-bottom: 20px;
+    width: 200px;
 }
 
 .page:hover {
-    color: #fb8b24;
+    color: #ff908f;
     transition: color 0.3s ease;
-}
-
-.header-title:hover {
-    color: #fb8b24;
-    transition: color 0.3s ease; 
 }
 
 .shopping-cart {
@@ -52,6 +37,6 @@ h1 {
 }
 
 .shopping-cart:hover {
-    color:#fb8b24;
+    color:#ff908f;
     transition: color 0.3s ease;
 }

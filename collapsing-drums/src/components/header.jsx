@@ -26,12 +26,11 @@ const Header = () => {
     };
 
     return (
-        <div className="header row">
+        <div className="header row justify-content-end">
 
-            {/* Logo */}
-            <div className="header-logo col-md-4 align-self-start" onClick={handleHomeClick}>
-                <img className="logo" src="/img/logo.png" alt="Logo"/>
-                <h1 className="header-title">Collapsing Drums</h1>
+             {/* Home Page */}
+             <div className="page col-md-2 align-self-end" onClick={handleHomeClick}>
+                <h3>Home</h3>    
             </div>
 
             {/* About Page */}
@@ -50,12 +49,13 @@ const Header = () => {
             </div>
 
             {/* Shopping Cart */}
-            <div className="col-md-2 align-self-center">
+            <div className="page col-md-2 align-self-end">
                 <FaShoppingCart
                     className="shopping-cart"
                     onClick={handleCartClick}
-            />
+                />
             </div>
+            
         </div>
     );
 };

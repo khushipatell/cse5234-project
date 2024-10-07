@@ -12,19 +12,20 @@ function ViewConfirmation() {
     const navigate = useNavigate();
 
     const handleSumbit = (e) => {
-        navigate('/purchase'); 
+        navigate('/home'); 
     }
     console.log("view" + data.totalCost);
 
     return (
         <div className="container-fluid body">
             <Header />
-           <h2>Thank You</h2>
-           <h3>Confirmation Number: 4859024321</h3>
-           <h5>Total Paid: ${location.state.totalCost}</h5>
-           <h5>Payment Under: {location.state.order.card_holder_name}</h5>
-           <h5>Shipping Info: {location.state.order.address_1} {location.state.order.city} {location.state.order.state} {location.state.order.zip}</h5>
-           <button className='button' onClick={handleSumbit}>Done</button>
+            <div className="confirm-box">
+                <h3>Confirmation Number: 4859024321</h3>
+                <h5>Total Paid: ${location.state.totalCost}</h5>
+                <h5>Payment Under: {location.state.order.card_holder_name}</h5>
+                <h5>Shipping Info: {location.state.order.address_1} {location.state.order.city} {location.state.order.state} {location.state.order.zip}</h5>
+                <button className='button' onClick={handleSumbit}>Done</button>
+            </div>
         </div>
     );
 }

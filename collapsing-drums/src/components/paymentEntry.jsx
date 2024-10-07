@@ -1,8 +1,21 @@
-import React, { useState } from 'react'; 
+import React from 'react'; 
 import Header from "./header";
 import { useNavigate, useLocation } from 'react-router-dom';
 import "../css/paymentEntry.css";
 import "../css/site.css";
+
+// Create a reusable Input component
+const InputField = ({ label, type, value, onChange }) => (
+    <div className="form-group">
+        <label>{label}</label>
+        <input
+            type={type}
+            required
+            value={value}
+            onChange={onChange}
+        />
+    </div>
+);
 
 const PaymentEntry = () => {
     const navigate = useNavigate(); 
@@ -11,13 +24,22 @@ const PaymentEntry = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate('/purchase/shippingEntry', { state: {order: data.order, totalCost: data.totalCost}}); 
+        navigate('/purchase/shippingEntry', { state: { order: data.order, totalCost: data.totalCost }}); 
     };
+
+    // Define form fields configuration
+    const formFields = [
+        { label: 'Credit Card Number', type: 'text', key: 'credit_card_number' },
+        { label: 'Expiration Date', type: 'text', key: 'expiration_date' },
+        { label: 'CVV Code', type: 'text', key: 'cvvCode' },
+        { label: 'Card Holder Name', type: 'text', key: 'card_holder_name' },
+    ];
 
     return (
         <div className="body container-fluid">
             <Header />
-            <h2>Payment Information</h2>
+            <div className="form-container">
+            <h2 className="text">Payment Information</h2>
             <form onSubmit={handleSubmit} className="payment-form">
                 <div className="form-group">
                 <label>Credit Card Number</label>
@@ -55,9 +77,10 @@ const PaymentEntry = () => {
                 />
                 </div>
                 <br />
-                <div>Total Cost: ${data.totalCost ? data.totalCost.toFixed(2) : '0.00'}</div>
+                <div className="text">Total Cost: ${data.totalCost ? data.totalCost.toFixed(2) : '0.00'}</div>
                 <button type="submit" className="button">Proceed to Shipping</button>
-            </form>
+                </form>
+            </div>
         </div>
     );
 };

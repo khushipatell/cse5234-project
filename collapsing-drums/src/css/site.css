@@ -1,14 +1,15 @@
 .body{
-    background-color: #f8f9fa;
+    background-color: #2a2e30;
     font-family: Arial, sans-serif;
     height: 100vh;
+    flex-direction: column;
 }
 
 button {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #0d1f22;
-    color: white;
+    background-color: white;
+    color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -16,6 +17,6 @@ button {
 }
 
 button:hover {
-    background-color:#69140e;
+    background-color:#ff908f;
     transition: color 0.3s ease;
 }
