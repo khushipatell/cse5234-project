@@ -41,7 +41,7 @@ const Cart = () => {
     return (
         <div className="cart-container body">
             <Header />
-            <h1>Your Shopping Cart</h1>
+            <h1 className="text">Your Shopping Cart</h1>
             <div className="cart-items">
                 {products.map((product, index) => {
                     const quantity = order.buyQuantity[index];
@@ -59,7 +59,7 @@ const Cart = () => {
                     return null; // Skip products with 0 quantity
                 })}
             </div>
-            <h2>Total Cost: ${totalCost.toFixed(2)}</h2>
+            <h2 className = "text">Total Cost: ${totalCost.toFixed(2)}</h2>
             <button className="button" onClick={handleCheckout}>Proceed to Checkout</button>
         </div>
     );

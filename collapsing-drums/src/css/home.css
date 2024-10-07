@@ -1,0 +1,19 @@
+/* home.css */
+.home-container {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    position: absolute; /* Position relative to the nearest positioned ancestor */
+    right: 0; /* Align to the right */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust to truly center it vertically */
+    background-size: contain; /* Scale the background image properly */
+    width: 800px; /* Set a width that fits your image */
+    height: 200px; /* Set a height that fits your image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+}

@@ -2,25 +2,41 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
-    background-color: #0d1f22;
-    color: #899878;
-    height: 60px;
+    color: white;
+    height: 100px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.header-title {
-    font-size: 24px;
+.logo {
+    max-height: 100%;
+    width: auto;
+}
+
+h1 {
+    font-size: 50px;
     margin: 0;
+    font-family: bradley hand, cursive;
+}
+
+.page{
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding-bottom: 20px;
+    width: 200px;
+}
+
+.page:hover {
+    color: #ff908f;
+    transition: color 0.3s ease;
 }
 
 .shopping-cart {
     font-size: 40px;
     cursor: pointer;
-    color: #899878;
+    color: white;
 }
 
 .shopping-cart:hover {
-    color:#69140e;
+    color:#ff908f;
     transition: color 0.3s ease;
 }
