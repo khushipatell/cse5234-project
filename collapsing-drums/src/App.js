@@ -8,6 +8,7 @@ import ShippingEntry from './components/shippingEntry';
 import ViewOrder from './components/viewOrder';
 import ViewConfirmation from './components/viewConfirmation';
 import Home from './components/home';
+import ContactUs from './components/contactUs';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path='/purchase/shippingEntry' element={<ShippingEntry/>}/>
             <Route path='/purchase/viewOrder' element={<ViewOrder/>}/>
             <Route path='/purchase/viewConfirmation' element={<ViewConfirmation/>}/>
+            <Route path='/contactUs' element={<ContactUs/>}/>
             <Route path='/' element={<Navigate replace to="/home"/>}/>
           </Routes>
         </div>

@@ -1,0 +1,95 @@
+/* Contact sontainer */
+.contact-container {
+    display: flex;
+    background-color: #3a3f44;
+    border-radius: 12px;
+    padding: 60px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+/* Fill form section */
+.contact-form, .form-submitted-message {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 50px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: #2a2e30;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: white;
+
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #b3b3b3;
+}
+
+.contact-form textarea {
+    height: 100px;
+}
+
+.contact-form button, .form-submitted-message button {
+    padding: 12px 20px;
+    background-color: #ff908f; 
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form button:hover, .form-submitted-message button:hover {
+    background-color: #e5ce74;
+    transition: background-color 0.3s ease;
+}
+
+/* Image */
+.contact-image {
+    flex: 1;
+    display: grid;
+    justify-content: left;
+    padding: 10px;
+    position: sticky;
+}
+
+.contact-image img {
+    height: 400px;
+    width: 400px;
+    border-radius: 12px;
+}
+
+/* After submission */
+.form-submitted-message {
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-submitted-message button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.form-submitted-message h2,
+.contact-form h2 {
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}

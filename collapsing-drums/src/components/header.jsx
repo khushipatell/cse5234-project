@@ -23,6 +23,7 @@ const Header = () => {
     };
 
     const handleContactClick = () => {
+        navigate("/contactUs");
     };
 
     return (
