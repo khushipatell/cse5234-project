@@ -20,6 +20,7 @@ const Header = () => {
     };
 
     const handleAboutClick = () => {
+        navigate("/aboutPage");
     };
 
     const handleContactClick = () => {
