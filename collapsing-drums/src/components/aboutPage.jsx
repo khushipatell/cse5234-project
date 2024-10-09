@@ -21,7 +21,7 @@ const About = () => {
                     </h2>
                 </div>
                 <div className="missionImg col-md-4">
-
+                    <img className="cdImg" src="/img/CD.png" alt="cd graphic"></img>
                 </div>
             </div>
 

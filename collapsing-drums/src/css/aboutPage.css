@@ -15,6 +15,15 @@
 
 .missionImg {
     margin: 20px;
+    height: auto; /* Adjusts height automatically */
+    overflow: hidden; /* Ensures any overflowing content is hidden */
+    align-self: center;
+}
+
+.cdImg{
+    max-width: 100%; /* Ensures the image never exceeds the width of the div */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes bottom space (if any) */
 }
 
 h1 {
@@ -176,5 +185,8 @@ p {
         margin: 10px;
         width: 100%;
         text-align: center;
+    }
+    .cdImg{
+        display: none;
     }
 }
