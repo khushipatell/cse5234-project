@@ -1,0 +1,214 @@
+.row {
+    margin: auto;
+    justify-content: center;
+}
+.topbar {
+    padding-bottom: 6vw;
+    padding-top: 6vw;
+}
+
+.missionStmt {
+    text-align: left;
+    padding: 40px;
+    margin: 20px;
+}
+
+.missionImg {
+    margin: 20px;
+    height: auto; /* Adjusts height automatically */
+    overflow: hidden; /* Ensures any overflowing content is hidden */
+    align-self: center;
+}
+
+.cdImg{
+    max-width: 100%; /* Ensures the image never exceeds the width of the div */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes bottom space (if any) */
+}
+
+h1 {
+    color: #fbd65c;
+    font-family: Garamond, serif;
+    font-size: 4rem;
+    margin-top: 40px;
+}
+
+h2 {
+    font-family: Garamond, serif;
+    font-size: 1.4rem;
+    color: white;
+}
+
+.midbar {
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+    background-color: #ff908f;
+}
+
+.strat{
+    margin-bottom: 50px;
+}
+
+.shopCol {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+}
+
+.shopButton {
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+}
+
+.merch:hover {
+    content: url('../assets/Shop\ Merch\ Hover.png');
+}
+
+.ticket:hover {
+    content: url('../assets/Shop\ Tickets\ Hover.png');
+}
+
+.music:hover {
+    content: url('../assets/Stream\ Music\ Hover.png');
+}
+
+.bottombar {
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+}
+
+.exec {
+    display: flex;
+    align-items: center; 
+    box-shadow: 10px 5px 5px #ff908f, -10px -5px 5px #ff908f;
+    margin: 60px;
+    width: 80%;
+}
+
+.exec-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.exec-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1rem;
+    width: 20%;
+}
+
+p {
+    color: white;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.headshot {
+    height: 80%;
+    width: 80%;
+    margin: 40px;
+}
+
+.name {
+    font-family: Garamond, serif;
+    font-size: 2rem;
+    color: white;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.exec-experience {
+    flex: 1;
+    width: 80%;
+    margin: 40px;
+}
+
+.ml-3 {
+    margin-left: 20px;
+    color: white;
+}
+
+/* tablet breakpoint*/
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    .shopCol {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .shopButton{
+        width: 100%;
+        height: 100%;
+    }
+    .name {
+        font-size: 1.4rem;
+    }
+    p{
+        font-size: 1rem;
+    }
+    .exec{
+        width: 100%;
+    }
+    .exec-header {
+        width: 40%;
+    }
+
+    .headshot {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+
+/* mobile breakpoint*/
+@media (max-width: 768px){
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    p{
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    .shopButton{
+        width: 50%;
+        height: 80%;
+    }
+    .exec {
+        display: flex;
+        justify-content: center;
+    }
+    .exec-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 60%;
+    }
+
+    .exec-header {
+        width: 60%;
+    }
+
+    .headshot {
+        width: 100%;
+        height: 100%;
+    }
+
+    .exec-experience {
+        margin: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    .cdImg{
+        display: none;
+    }
+}

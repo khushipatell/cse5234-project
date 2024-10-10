@@ -8,6 +8,7 @@ import ShippingEntry from './components/shippingEntry';
 import ViewOrder from './components/viewOrder';
 import ViewConfirmation from './components/viewConfirmation';
 import Home from './components/home';
+import AboutPage from './components/aboutPage';
 import ContactUs from './components/contactUs';
 
 
@@ -18,6 +19,7 @@ function App() {
         <div className="content">
           <Routes>
             <Route path='/home' element={<Home/>}/>
+            <Route path='/aboutPage' element={<AboutPage/>}/>
             <Route path='/purchase' element={<Purchase/>}/>
             <Route path='/purchase/paymentEntry' element={<PaymentEntry/>}/>
             <Route path='/purchase/shippingEntry' element={<ShippingEntry/>}/>
