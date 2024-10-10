@@ -35,7 +35,7 @@ const Cart = () => {
 
     const handleCheckout = () => {
         console.log("Total Cost:", totalCost); // Debugging line
-        navigate("/purchase/paymentEntry", {state: {order: order, totalCost: totalCost } }); // Navigate to checkout page
+        navigate("/paymentEntry", {state: {order: order, totalCost: totalCost } }); // Navigate to checkout page
     };
 
     return (

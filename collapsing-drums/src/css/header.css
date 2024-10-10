@@ -1,40 +1,106 @@
-.header {
+.navbar {
+    background-color: rgba(255, 231, 150, 1);
+    min-height: 80px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    color: white;
-    height: 100px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 0 40px;
+}
+
+.navbar-brand {
+    margin-right: auto;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping on larger screens */
+}
+
+.nav-item {
+    margin: 0 10px; /* Reduced margin for better fit */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 .logo {
-    max-height: 100%;
     width: auto;
+    height: 60px;
+    display: block;
 }
 
-.page{
+.logo:hover {
+    content: url('../assets/CD Hover.png');
+    transition: content 0.3s ease;
+}
+
+h3 {
+    font-size: 1.2rem; /* Slightly reduced font size for better fit */
+    color: black;
+    cursor: pointer;
+    font-family: Garamond, serif;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+h3:hover {
     color: white;
-    padding-bottom: 20px;
-    width: 10%;
-}
-
-h3{
-    font-size: 3vh;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.page:hover {
-    color: #ff908f;
     transition: color 0.3s ease;
 }
 
 .shopping-cart {
-    font-size: 40px;
+    font-size: 1.8rem; /* Slightly reduced size for better alignment */
     cursor: pointer;
-    color: white;
+    color: black;
 }
 
 .shopping-cart:hover {
-    color:#ff908f;
+    color: white;
     transition: color 0.3s ease;
+}
+
+/* Hide toggle button on larger screens */
+.navbar-toggler {
+    display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .navbar-toggler {
+        display: block;
+        order: 1;
+        margin-left: auto;
+    }
+
+    .navbar-collapse {
+        display: none;
+        flex-basis: 100%;
+        margin-top: 10px;
+    }
+
+    .navbar-collapse.show {
+        display: block;
+    }
+
+    .navbar-nav {
+        align-items: flex-start;
+    }
+
+    .logo {
+        height: 40px;
+    }
+}
+
+/* Adjustments for medium-sized screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+    h3 {
+        font-size: 1.1rem; /* Further reduced font size for medium screens */
+    }
+
+    .logo {
+        height: 50px;
+    }
 }

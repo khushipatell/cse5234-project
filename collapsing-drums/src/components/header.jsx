@@ -1,4 +1,6 @@
 import React from "react";
+import { useState } from 'react';
+import { useEffect} from 'react';
 import {useNavigate} from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import "../css/header.css";
@@ -15,8 +17,8 @@ const Header = () => {
         navigate("/home");
     };
     
-    const handleProductClick = () => {
-        navigate("/purchase");
+    const handleMerchClick = () => {
+        navigate("/merch");
     };
 
     const handleAboutClick = () => {
@@ -28,37 +30,61 @@ const Header = () => {
     };
 
     return (
-        <div className="header row justify-content-end">
+        <nav className="navbar fixed-top navbar-expand-lg navbar-light">
+            <div className="container-fluid">
+                <a className="navbar-brand" onClick={handleHomeClick}>
+                    <img src="/img/CD.png" className="logo img-fluid" alt="CD LOGO" />
+                </a>
 
-             {/* Home Page */}
-             <div className="page col-sm-2 col-md-2 align-self-end" onClick={handleHomeClick}>
-                <h3>Home</h3>    
-            </div>
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" 
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
 
-            {/* About Page */}
-            <div className="page col-sm-2 col-md-2 align-self-end" onClick={handleAboutClick}>
-                <h3>About Us</h3>    
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav ms-auto">
+                        <li className="nav-item">
+                            <a className="nav-link active" onClick={handleAboutClick}>
+                                <h3>About Us</h3>
+                            </a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link active" onClick={handleMerchClick}>
+                                <h3>Merch</h3>
+                            </a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link active">
+                                <h3>Tickets</h3>
+                            </a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link active">
+                                <h3>Music</h3>
+                            </a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link active" onClick={handleContactClick}>
+                                <h3>Contact Us</h3>
+                            </a>
+                        </li>
+                        <li className="nav-item">
+                            <FaShoppingCart
+                                className="shopping-cart"
+                                onClick={handleCartClick}
+                            />
+                        </li>
+                    </ul>
+                </div>
             </div>
-
-            {/* Product Page */}
-            <div className="page col-sm-2 col-md-2 align-self-end" onClick={handleProductClick}>
-                <h3>Products</h3>    
-            </div>
-
-            {/* Contact Page */}
-            <div className="page col-sm-2 col-md-2 align-self-end" onClick={handleContactClick}>
-                <h3>Contact</h3>    
-            </div>
-
-            {/* Shopping Cart */}
-            <div className="page col-sm-2 col-md-2 align-self-end">
-                <FaShoppingCart
-                    className="shopping-cart"
-                    onClick={handleCartClick}
-                />
-            </div>
-            
-        </div>
+        </nav>
     );
 };
 

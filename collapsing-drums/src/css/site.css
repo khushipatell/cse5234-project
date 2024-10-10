@@ -8,15 +8,16 @@
 button {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: white;
+    background-color: #ff908f;
     color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    font-family: Garamond, serif;
 }
 
 button:hover {
-    background-color:#ff908f;
+    background-color:#e5ce74;
     transition: color 0.3s ease;
 }

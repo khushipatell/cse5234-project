@@ -24,7 +24,7 @@ const PaymentEntry = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate('/purchase/shippingEntry', { state: { order: data.order, totalCost: data.totalCost }}); 
+        navigate('/shippingEntry', { state: { order: data.order, totalCost: data.totalCost }}); 
     };
 
     // Define form fields configuration

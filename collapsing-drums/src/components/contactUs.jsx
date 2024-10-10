@@ -108,7 +108,7 @@ const ContactUs = () => {
             />
             {errors.comment && <span className="error">{errors.comment}</span>}
 
-            <button type="submit">Send Message</button>
+            <button type="submit"><b>Send Message</b></button>
           </form>
         )}
 
