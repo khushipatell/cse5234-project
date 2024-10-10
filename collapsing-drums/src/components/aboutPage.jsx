@@ -1,9 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import "../css/site.css";
 import Header from "./header";
 import "../css/aboutPage.css";
 
 const About = () => {
+
+    const navigate = useNavigate();
+
+    const handleProductClick = () => {
+        navigate("/purchase");
+    };
+
     return(
         <div className="body container-fluid">
             <Header />
@@ -34,7 +42,7 @@ const About = () => {
                     </h1>
                 </div>
 
-                <div className="row">
+                <div className="row strat">
                     <h2 style={{color: 'black'}}>
                         At <b>Collapsing Drums</b>, we believe in the power of music to connect people, tell stories, and create lasting memories. 
                         <br></br>
@@ -45,14 +53,14 @@ const About = () => {
                 </div>
 
                 <div className= "row">
-                    <div className="shopCol col-sm-12 col-md-5 col-lg-3">
-                        <img className="shopButton" src="/img/Shop Merch.png" alt="Shop Merch Button"></img>
+                    <div className="shopCol col-sm-12 col-md-3 col-lg-3">
+                        <img className="shopButton merch" src="/img/Shop Merch.png" alt="Shop Merch Button" onClick={handleProductClick}></img>
                     </div>
-                    <div className="shopCol col-sm-12 col-md-5 col-lg-3">
-                        <img className="shopButton" src="/img/Shop Tickets.png" alt="Shop Ticket Button"></img>
+                    <div className="shopCol col-sm-12 col-md-3 col-lg-3">
+                        <img className="shopButton ticket" src="/img/Shop Tickets.png" alt="Shop Ticket Button"></img>
                     </div>
-                    <div className="shopCol col-sm-12 col-md-5 col-lg-3">
-                        <img className="shopButton" src="/img/Stream Music.png" alt="Stream Music Button"></img>
+                    <div className="shopCol col-sm-12 col-md-3 col-lg-3">
+                        <img className="shopButton music" src="/img/Stream Music.png" alt="Stream Music Button"></img>
                     </div>
                 </div>
             </div>
