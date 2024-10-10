@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./header";
+import Footer from "./footer";
 import {useNavigate, useLocation} from 'react-router-dom';
 import "../css/viewConfirmation.css";
 import "../css/site.css";
@@ -19,6 +20,7 @@ function ViewConfirmation() {
     return (
         <div className="container-fluid body">
             <Header />
+            <div className="confirm-container">
             <div className="confirm-box">
                 <h3>Confirmation Number: 4859024321</h3>
                 <h5>Total Paid: ${location.state.totalCost}</h5>
@@ -26,6 +28,8 @@ function ViewConfirmation() {
                 <h5>Shipping Info: {location.state.order.address_1} {location.state.order.city} {location.state.order.state} {location.state.order.zip}</h5>
                 <button className='button' onClick={handleSumbit}>Done</button>
             </div>
+            </div>
+            <Footer />
         </div>
     );
 }

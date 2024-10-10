@@ -19,9 +19,9 @@ const Home = () => {
     }, []);
 
     return (
-        <div className={`home-container container-fluid ${isMobile ? 'mobile' : ''}`}>
+        <div className={`container-fluid ${isMobile ? 'mobile' : ''}`}>
             <Header />
-            <main className="home-content"></main>
+            <main className="home-container home-content"></main>
             <Footer />
         </div>
     );

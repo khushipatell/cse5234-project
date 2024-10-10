@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../css/site.css";
 import Header from "./header";
+import Footer from "./footer";
 import "../css/aboutPage.css";
 
 const About = () => {
@@ -116,7 +117,7 @@ const About = () => {
                 </div>
 
             </div>
-
+            <Footer />
         </div>
     );
 };

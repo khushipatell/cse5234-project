@@ -1,7 +1,8 @@
 import React from 'react'; 
 import Header from "./header";
+import Footer from "./footer";
 import { useNavigate, useLocation } from 'react-router-dom';
-import "../css/paymentEntry.css";
+import "../css/entry.css";
 import "../css/site.css";
 
 // Create a reusable Input component
@@ -36,51 +37,33 @@ const PaymentEntry = () => {
     ];
 
     return (
-        <div className="body container-fluid">
+        <div className="body">
             <Header />
-            <div className="form-container">
-            <h2 className="text">Payment Information</h2>
-            <form onSubmit={handleSubmit} className="payment-form">
-                <div className="form-group">
-                <label>Credit Card Number</label>
-                <input
-                    type="text"
-                    required
-                    onChange={(e) => {data.order.credit_card_number = e.target.value;}}
-                />
+            <div className="entry-container">
+                <div className="entry-form">
+                    <h2 className="text">Payment Information</h2>
+                    <form onSubmit={handleSubmit}>
+                        {formFields.map((field) => (
+                            <InputField
+                                key={field.key}
+                                label={field.label}
+                                type={field.type}
+                                onChange={(e) => {data.order[field.key] = e.target.value;}}
+                            />
+                        ))}
+                        <div className="form-group">
+                            <label>Total Cost:</label>
+                            <input 
+                                type="text" 
+                                value={`$${data.totalCost ? data.totalCost.toFixed(2) : '0.00'}`} 
+                                readOnly 
+                            />
+                        </div>
+                        <button type="submit" className="button">Proceed to Shipping</button>
+                    </form>
                 </div>
-                <br />
-                <div className="form-group">
-                <label>Expiration Date</label>
-                <input
-                    type="text"
-                    required
-                    onChange={(e) => {data.order.expiration_date = e.target.value;}}
-                />
-                </div>
-                <br />
-                <div className="form-group">
-                <label>CVV Code</label>
-                 <input
-                    type="text"
-                    required
-                    onChange={(e) => {data.order.cvvCode = e.target.value;}}
-                />
-                </div>
-                <br />
-                <div className="form-group">
-                <label>Card Holder Name</label>
-                <input
-                    type="text"
-                    required
-                    onChange={(e) => {data.order.card_holder_name = e.target.value;}}
-                />
-                </div>
-                <br />
-                <div className="text">Total Cost: ${data.totalCost ? data.totalCost.toFixed(2) : '0.00'}</div>
-                <button type="submit" className="button">Proceed to Shipping</button>
-                </form>
             </div>
+            <Footer />
         </div>
     );
 };

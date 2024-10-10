@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import Header from "./header";
+import Footer from "./footer";
 import "../css/site.css";
 import "../css/merch.css";
 
@@ -34,6 +35,7 @@ const Purchase = () => {
     return (
         <div className="body container-fluid">
         <Header />
+        <div className="purchase-container">
         <form onSubmit={handleSumbit} className="purchase-form">
             <div className="product-row">
                 {products.map((product, index) => (
@@ -53,6 +55,8 @@ const Purchase = () => {
             </div>
             <button type="submit" className="button"><b>Purchase</b></button>
         </form>
+        </div>
+        <Footer />
         </div>
     );
 };
