@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Header from "./header";
+import Footer from "./footer";
 import "../css/viewOrder.css";
 import "../css/site.css";
 
@@ -39,8 +40,9 @@ const Cart = () => {
     };
 
     return (
-        <div className="cart-container body">
+        <div className="container-fluid body">
             <Header />
+            <div className="cart-container">
             <h1 className="text">Your Shopping Cart</h1>
             <div className="cart-items">
                 {products.map((product, index) => {
@@ -59,8 +61,12 @@ const Cart = () => {
                     return null; // Skip products with 0 quantity
                 })}
             </div>
-            <h2 className = "text">Total Cost: ${totalCost.toFixed(2)}</h2>
-            <button className="button" onClick={handleCheckout}>Proceed to Checkout</button>
+            <div className="checkout">
+                <h2 className = "text">Total Cost: ${totalCost.toFixed(2)}</h2>
+                <button className="checkoutbutton" onClick={handleCheckout}>Proceed to Checkout</button>
+            </div>
+            </div>
+            <Footer />
         </div>
     );
 };

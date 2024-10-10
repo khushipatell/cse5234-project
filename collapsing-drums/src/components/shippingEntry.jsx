@@ -1,7 +1,8 @@
 import React from "react";
 import Header from "./header";
+import Footer from "./footer";
 import {useNavigate, useLocation} from 'react-router-dom';
-import "../css/shippingEntry.css";
+import "../css/entry.css";
 import "../css/site.css";
 
 function ShippingEntry() {
@@ -14,64 +15,48 @@ function ShippingEntry() {
         navigate('/viewConfirmation', { state: { order: data.order, totalCost: data.totalCost }}); 
     }; 
 
+    const InputField = ({ label, type, value, onChange }) => (
+        <div className="form-group">
+            <label>{label}</label>
+            <input
+                type={type}
+                required
+                value={value}
+                onChange={onChange}
+            />
+        </div>
+    );
+
+    // Define form fields configuration
+    const formFields= [
+        {label: 'Address Line 1', type: 'text', key: 'address_1'},
+        {label: 'Address Line 2', type: 'text', key: 'address_2'},
+        {label: 'City', type: 'text', key: 'city'},
+        {label: 'State', type: 'text', key:'state'},
+        {label: 'Zip Code', type: 'text', key: 'zip'}
+    ];
+
     return (
         <div className="body container-fluid">
             <Header />
-            <div className="form-container">
-            <h2 className="text">Shipping Information</h2>
-            <form onSubmit={handleSumbit} className="shipping-form">
-                <div className="form-group">
-                <label>Address Line 1</label>
-                <input
-                    type="text"
-                    required
-                    onChange={(e) =>
-                        {data.order.address_1 = e.target.value; }}
-                />
-                </div>
-                <br/>
-                <div className="form-group">
-                <label>Address Line 2</label>
-                <input
-                    type="text"
-                    onChange={(e) =>
-                        {data.order.address_2 = e.target.value; }}
-                />
-                </div>
-                <br/>
-                <div className="form-group">
-                <label>City</label>
-                <input
-                    type="text"
-                    required
-                    onChange={(e) =>
-                        {data.order.city = e.target.value; }}
-                />
-                </div>
-                <br/>
-                <div className="form-group">
-                <label>State</label>
-                <input
-                    type="text"
-                    required
-                    onChange={(e) =>
-                        {data.order.state = e.target.value; }}
-                />
-                </div>
-                <br/>
-                <div className="form-group">
-                <label>Zip</label>
-                <input
-                    type="text"
-                    required
-                    onChange={(e) =>
-                        {data.order.zip = e.target.value; }}
-                />
-                </div>
+            <div className="entry-container">
+                <div className="entry-form">
+                <h2 className="text">Shipping Information</h2>
+                <form onSubmit={handleSumbit}>
+                    {formFields.map((field) => (
+                        <InputField
+                            key={field.key}
+                            label={field.label}
+                            type={field.type}
+                            onChange={(e) => {data.order[field.key] = e.target.value;}}
+                        />
+                    ))}
                 <br />
                 <button className='button'>Review Order</button>
-            </form>
+                </form>
+                </div>
             </div>
+            <Footer />
         </div>
     );
 }

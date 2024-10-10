@@ -6,33 +6,36 @@ html, body {
 }
 
 .home-container {
-    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
     width: 100vw;
+} 
+
+.home-content {
     background-image: url('../assets/HomePage.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: #f0f0f0; /* Fallback color */
-}
-
-.home-content {
-    /* Add styles for your main content area */
-    padding: 20px;
     position: relative;
-    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 /* Mobile styles */
 @media (max-width: 768px) {
-    .home-container {
+    .home-content {
         background-image: url('../assets/MobileHomePage.png');
     }
 }
 
 /* Ensure header and footer don't block the background */
-.header, .footer {
+/* .header, .footer {
     background-color: transparent;
     position: relative;
     z-index: 2;
-}
+} */

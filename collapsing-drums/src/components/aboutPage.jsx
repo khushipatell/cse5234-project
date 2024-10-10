@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../css/site.css";
 import Header from "./header";
+import Footer from "./footer";
 import "../css/aboutPage.css";
 
 const About = () => {
@@ -95,7 +96,7 @@ const About = () => {
                             <div className="exec-content">
                                 <div className="exec-header">
                                     <img className="headshot rounded-circle" src="/img/placeholder.png" alt="Drishti's Headshot" />
-                                    <h2 className="name">Drishit Mittal</h2>
+                                    <h2 className="name">Drishti Mittal</h2>
                                 </div>
                                 <div className="exec-experience">
                                     <p className="experience">INSERT EXPERIENCE</p>
@@ -116,7 +117,7 @@ const About = () => {
                 </div>
 
             </div>
-
+            <Footer />
         </div>
     );
 };

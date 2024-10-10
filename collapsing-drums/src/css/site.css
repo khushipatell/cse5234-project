@@ -3,6 +3,8 @@
     font-family: Arial, sans-serif;
     min-height: 100vh;
     overflow: hidden;
+    justify-content: center;
+    align-content: center;
 }
 
 button {
