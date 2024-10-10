@@ -1,8 +1,9 @@
 import './App.css';
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import {BrowserRouter as Router, Route, Routes, Navigate} from "react-router-dom";
-import Purchase from './components/purchase';
+import Merch from './components/merch';
 import PaymentEntry from './components/paymentEntry';
 import ShippingEntry from './components/shippingEntry';
 import ViewOrder from './components/viewOrder';
@@ -20,11 +21,11 @@ function App() {
           <Routes>
             <Route path='/home' element={<Home/>}/>
             <Route path='/aboutPage' element={<AboutPage/>}/>
-            <Route path='/purchase' element={<Purchase/>}/>
-            <Route path='/purchase/paymentEntry' element={<PaymentEntry/>}/>
-            <Route path='/purchase/shippingEntry' element={<ShippingEntry/>}/>
-            <Route path='/purchase/viewOrder' element={<ViewOrder/>}/>
-            <Route path='/purchase/viewConfirmation' element={<ViewConfirmation/>}/>
+            <Route path='/merch' element={<Merch/>}/>
+            <Route path='/paymentEntry' element={<PaymentEntry/>}/>
+            <Route path='/shippingEntry' element={<ShippingEntry/>}/>
+            <Route path='/viewOrder' element={<ViewOrder/>}/>
+            <Route path='/viewConfirmation' element={<ViewConfirmation/>}/>
             <Route path='/contactUs' element={<ContactUs/>}/>
             <Route path='/' element={<Navigate replace to="/home"/>}/>
           </Routes>

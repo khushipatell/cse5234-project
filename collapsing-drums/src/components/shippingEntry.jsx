@@ -11,7 +11,7 @@ function ShippingEntry() {
 
     const handleSumbit = (e) => {
         e.preventDefault();
-        navigate('/purchase/viewConfirmation', { state: { order: data.order, totalCost: data.totalCost }}); 
+        navigate('/viewConfirmation', { state: { order: data.order, totalCost: data.totalCost }}); 
     }; 
 
     return (

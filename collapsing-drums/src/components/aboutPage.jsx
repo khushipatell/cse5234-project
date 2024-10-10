@@ -8,8 +8,8 @@ const About = () => {
 
     const navigate = useNavigate();
 
-    const handleProductClick = () => {
-        navigate("/purchase");
+    const handleMerchClick = () => {
+        navigate("/merch");
     };
 
     return(
@@ -29,7 +29,7 @@ const About = () => {
                     </h2>
                 </div>
                 <div className="missionImg col-md-4">
-                    <img className="cdImg" src="/img/CD.png" alt="cd graphic"></img>
+                    <img className="cdImg" src="/img/About CD.png" alt="cd graphic"></img>
                 </div>
             </div>
 
@@ -54,7 +54,7 @@ const About = () => {
 
                 <div className= "row">
                     <div className="shopCol col-sm-12 col-md-3 col-lg-3">
-                        <img className="shopButton merch" src="/img/Shop Merch.png" alt="Shop Merch Button" onClick={handleProductClick}></img>
+                        <img className="shopButton merch" src="/img/Shop Merch.png" alt="Shop Merch Button" onClick={handleMerchClick}></img>
                     </div>
                     <div className="shopCol col-sm-12 col-md-3 col-lg-3">
                         <img className="shopButton ticket" src="/img/Shop Tickets.png" alt="Shop Ticket Button"></img>
@@ -82,7 +82,7 @@ const About = () => {
                                     <h2 className="name">Muskan Shergill</h2>
                                 </div>
                                 <div className="exec-experience">
-                                    <p>Muskan is a Computer Science & Engineering major with a minor in Studio Art from The Ohio State University.
+                                    <p className="experience">Muskan is a Computer Science & Engineering major with a minor in Studio Art from The Ohio State University.
                                         Her current experience involves interning at KeyBank for 2 summers as a ServiceNow Software Developer Intern and then a Service Account Governance Intern.
                                         Some key project work include building a monogame remake of Super Mario Bros 3, building a cybersecurity compliance application for Ohio water plants, and 
                                         creating an animated short <i>Subway Rat</i>. This strong background in agile project work, the creative arts, and security is the perfect mix
@@ -98,7 +98,7 @@ const About = () => {
                                     <h2 className="name">Drishit Mittal</h2>
                                 </div>
                                 <div className="exec-experience">
-                                    <p>INSERT EXPERIENCE</p>
+                                    <p className="experience">INSERT EXPERIENCE</p>
                                 </div>
                             </div>
                         </div>
@@ -109,7 +109,7 @@ const About = () => {
                                     <h2 className="name">Khushi Patel</h2>
                                 </div>
                                 <div className="exec-experience">
-                                    <p>INSERT EXPERIENCE</p>
+                                    <p className="experience">INSERT EXPERIENCE</p>
                                 </div>
                             </div>
                         </div>
