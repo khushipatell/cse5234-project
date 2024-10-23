@@ -6,12 +6,17 @@ import Header from "./header";
 import Footer from "./footer";
 import "../css/site.css";
 import "../css/merch.css";
+import axios from "axios";
 
 const Purchase = () => {
     const [order, setOrder] = useState({
         buyQuantity: [0,0,0,0,0], credit_card_number: '', expir_date: '', cvvCode: '',
         card_holder_name: '', address_1: '', address_2: '', city: '', state: '', zip: '',
     });
+
+    const [data, setData] = useState([]);
+
+    //id = 1;
 
     const navigate = useNavigate();
 
@@ -29,8 +34,20 @@ const Purchase = () => {
     };
 
     useEffect(() => {
-        console.log("Updated buyQuantity:", order.buyQuantity);
-    }, [order.buyQuantity]); 
+        // Fetch data from an API
+        fetch('https://0q2mix7rob.execute-api.us-east-2.amazonaws.com/devOrder/inventory-management/inventory/items/id', {
+        })
+          .then(response => {
+            if (!response.ok) {
+                throw new Error(`This is an HTTP error: The status is ${response.status}`);
+            }
+            return response.json();  // Convert response to JSON
+          })
+          .then(data => setData(data))
+          .catch(error => {
+            console.error('Error fetching data:', error);
+          });
+      }, [order.buyQuantity]);
 
     return (
         <div className="body container-fluid">
@@ -43,6 +60,7 @@ const Purchase = () => {
                         <p>{product.name}</p>
                         <img src={product.image} alt={product.name} className="product-image" />
                         <p>Cost: ${product.cost}</p>
+                        <p>{data.cost}</p>
                         <input
                             type="number"
                             min="0"
@@ -55,6 +73,7 @@ const Purchase = () => {
             </div>
             <button type="submit" className="button"><b>Purchase</b></button>
         </form>
+        <p>{data.name}</p>
         </div>
         <Footer />
         </div>
