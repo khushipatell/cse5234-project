@@ -10,6 +10,7 @@ const Cart = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const { order } = location.state || { order: {} };
+    const [data, setData] = useState([]);
 
     // Products array similar to the Purchase component
     const products = [
@@ -30,6 +31,19 @@ const Cart = () => {
     };
 
     useEffect(() => {
+        // Fetch data from an API
+        fetch('https://0q2mix7rob.execute-api.us-east-2.amazonaws.com/devOrder/inventory-management/inventory/items/id', {
+        })
+          .then(response => {
+            if (!response.ok) {
+                throw new Error(`This is an HTTP error: The status is ${response.status}`);
+            }
+            return response.json();  // Convert response to JSON
+          })
+          .then(data => setData(data))
+          .catch(error => {
+            console.error('Error fetching data:', error);
+          });
         const total = calculateTotalCost();
         setTotalCost(total);
     }, [order]); 
@@ -61,16 +75,16 @@ const Cart = () => {
             <div className="cart-container">
             <h1 className="text">Your Shopping Cart</h1>
             <div className="cart-items">
-                {products.map((product, index) => {
+                {data.map((item, index) => {
                     const quantity = order.buyQuantity[index];
                     if (quantity > 0) {
                         return (
                             <div key={index} className="view-row">
-                                    <div className="view-name">{product.name}</div>
-                                    <img src={product.image} alt={product.name} className="view-image" />
-                                    <div className="view-price">Price: ${product.cost}</div>
+                                    <div className="view-name">{item.name}</div>
+                                    <img src={item.image} alt={item.name} className="view-image" />
+                                    <div className="view-price">Price: ${item.cost}</div>
                                     <div className="view-quantity">Quantity: {quantity}</div>
-                                    <p>Total: ${(product.cost * quantity).toFixed(2)}</p>
+                                    <p>Total: ${(item.cost * quantity).toFixed(2)}</p>
                             </div>
                         );
                     }
