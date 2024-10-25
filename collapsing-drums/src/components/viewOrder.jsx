@@ -34,8 +34,24 @@ const Cart = () => {
         setTotalCost(total);
     }, [order]); 
 
-    const handleCheckout = () => {
-        console.log("Total Cost:", totalCost); // Debugging line
+    useEffect(() => {
+        // Fetch data from an API
+        fetch('', {
+        })
+          .then(response => {
+            if (!response.ok) {
+                throw new Error(`This is an HTTP error: The status is ${response.status}`);
+            }
+            return response.json();  // Convert response to JSON
+          })
+          .then(data => setData(data))
+          .catch(error => {
+            console.error('Error fetching data:', error);
+          });
+      }, [order.buyQuantity]);
+
+
+    const handleCheckout = async(e) => {
         navigate("/paymentEntry", {state: {order: order, totalCost: totalCost } }); // Navigate to checkout page
     };
 
