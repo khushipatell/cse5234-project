@@ -16,6 +16,8 @@ const Purchase = () => {
 
     const [data, setData] = useState([]);
 
+    const [response, setResponse] = useState(null);
+
     //id = 1;
 
     const navigate = useNavigate();
@@ -29,6 +31,22 @@ const Purchase = () => {
     ];
 
     const handleSumbit = (e) => {
+        const url = 'https://jsonplaceholder.typicode.com/posts';
+        try {
+            const response = fetch(url, {
+              method: 'POST', // Specify the method
+              headers: {
+                'Content-Type': 'application/json', // Important for JSON data
+              },
+              body: JSON.stringify(order), // Convert data to JSON string
+            });
+      
+            const result = response.json(); // Parse JSON response
+            setResponse(result); // Set response to state to display later
+          } catch (error) {
+            console.error('Error:', error);
+          }
+
         e.preventDefault();
         navigate('/viewOrder', { state: {order: order} });  // Pass the order and update function
     };
@@ -55,12 +73,11 @@ const Purchase = () => {
         <div className="purchase-container">
         <form onSubmit={handleSumbit} className="purchase-form">
             <div className="product-row">
-                {products.map((product, index) => (
+                {data.map((item, index) => (
                     <div key={index} className="product-item">
-                        <p>{product.name}</p>
-                        <img src={product.image} alt={product.name} className="product-image" />
-                        <p>Cost: ${product.cost}</p>
-                        <p>{data.cost}</p>
+                        <p>{item.name}</p>
+                        <img src={item.image} alt={item.name} className="product-image" />
+                        <p>Cost: ${item.cost}</p>
                         <input
                             type="number"
                             min="0"
@@ -73,7 +90,6 @@ const Purchase = () => {
             </div>
             <button type="submit" className="button"><b>Purchase</b></button>
         </form>
-        <p>{data.name}</p>
         </div>
         <Footer />
         </div>
