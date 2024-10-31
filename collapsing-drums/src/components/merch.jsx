@@ -22,13 +22,13 @@ const Purchase = () => {
 
     const navigate = useNavigate();
 
-    const products = [
-        { name: "Neutral Drum Set", image: "/img/DrumSet.jpeg", cost: 700 },
-        { name: "Neutral Guitar", image: "/img/Guitar.jpeg", cost: 100 },
-        { name: "Baby Pink Keyboard", image: "/img/PinkKeyboard.jpeg", cost: 200 },
-        { name: "Blue Violin", image: "/img/BlueViolin.jpeg", cost: 300 },
-        { name: "Green Tamborine", image: "/img/GreenTamb.jpeg", cost: 50 }
-    ];
+    // const products = [
+    //     { name: "Neutral Drum Set", image: "/img/DrumSet.jpeg", cost: 700 },
+    //     { name: "Neutral Guitar", image: "/img/Guitar.jpeg", cost: 100 },
+    //     { name: "Baby Pink Keyboard", image: "/img/PinkKeyboard.jpeg", cost: 200 },
+    //     { name: "Blue Violin", image: "/img/BlueViolin.jpeg", cost: 300 },
+    //     { name: "Green Tamborine", image: "/img/GreenTamb.jpeg", cost: 50 }
+    // ];
 
     const handleSumbit = (e) => {
         e.preventDefault();
