@@ -11,27 +11,28 @@ function ViewConfirmation() {
     const { order } = location.state || { order: {}, totalCost: 0 };
     const [confirmationNumber, setConfirmationNumber] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
-    const orderProcessingUrl = 'https://0q2mix7rob.execute-api.us-east-2.amazonaws.com/inventoryStage/order-processing/order';
+    const orderProcessingUrl = 'https://0q2mix7rob.execute-api.us-east-2.amazonaws.com/devOrder/order-processing/order';
 
     useEffect(() => {
         const processOrder = async () => {
             try {
                 const response = await fetch(orderProcessingUrl, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({order}), // Send order data
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(order), // Send order data
                 });
 
                 const dataResponse = await response.json();
+                console.log(dataResponse);
 
                 if (response.ok) {
-                    setConfirmationNumber(dataResponse.confirmation_number); // Set confirmation number on success
+                    console.log(dataResponse.confirmationNumber);
+                    setConfirmationNumber(dataResponse.confirmationNumber); // Set confirmation number on success
                 } else {
                     setErrorMessage("An error occurred while processing your order. Please try again.");
                 }
             } catch (error) {
                 setErrorMessage("Network error. Please check your connection and try again.");
-                console.error("Error:", error);
             }
         };
 
