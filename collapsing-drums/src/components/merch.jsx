@@ -12,7 +12,7 @@ const Purchase = () => {
         expir_date: '',
         cvvCode: '',
         card_holder_name: '',
-        email: '',
+        customer_email: '',
         address_1: '',
         address_2: '',
         city: '',

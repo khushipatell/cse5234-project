@@ -10,10 +10,11 @@ function ViewConfirmation() {
     const location = useLocation();
     const { order } = location.state || { order: {}, totalCost: 0 };
     const [confirmationNumber, setConfirmationNumber] = useState(null);
-    const [errorMessage, setErrorMessage] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(null); 
     const orderProcessingUrl = 'https://0q2mix7rob.execute-api.us-east-2.amazonaws.com/devOrder/order-processing/order';
 
     useEffect(() => {
+
         const processOrder = async () => {
             try {
                 const response = await fetch(orderProcessingUrl, {
@@ -61,7 +62,6 @@ function ViewConfirmation() {
                 ) : (
                     <p> Processing your order ... </p>
                 )}
-                {errorMessage && <p className="error-message">{errorMessage}</p>}
                 </div>
             </div>
             <Footer />

@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./header";
 import Footer from "./footer";
 import {useNavigate, useLocation} from 'react-router-dom';
+import { useEffect, useState } from "react";
 import "../css/entry.css";
 import "../css/site.css";
 

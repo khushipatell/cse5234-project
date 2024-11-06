@@ -34,7 +34,7 @@ const PaymentEntry = () => {
         { label: 'Expiration Date', type: 'text', key: 'expiration_date' },
         { label: 'CVV Code', type: 'text', key: 'cvvCode' },
         { label: 'Card Holder Name', type: 'text', key: 'card_holder_name' },
-        { label: 'Email', type: 'text', key: 'email' },
+        { label: 'Email', type: 'text', key: 'customer_email' },
     ];
 
     return (
