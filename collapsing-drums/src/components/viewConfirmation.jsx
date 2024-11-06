@@ -1,33 +1,68 @@
 import React from "react";
 import Header from "./header";
 import Footer from "./footer";
+import { useEffect, useState } from "react";
 import {useNavigate, useLocation} from 'react-router-dom';
 import "../css/viewConfirmation.css";
 import "../css/site.css";
 
 function ViewConfirmation() {
     const location = useLocation();
-    const data = location.state || { order: {}, totalCost: 0 };
+    const { order } = location.state || { order: {}, totalCost: 0 };
+    const [confirmationNumber, setConfirmationNumber] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(null); 
+    const orderProcessingUrl = 'https://0q2mix7rob.execute-api.us-east-2.amazonaws.com/devOrder/order-processing/order';
 
+    useEffect(() => {
+
+        const processOrder = async () => {
+            try {
+                const response = await fetch(orderProcessingUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(order), // Send order data
+                });
+
+                const dataResponse = await response.json();
+                console.log(dataResponse);
+
+                if (response.ok) {
+                    console.log(dataResponse.confirmationNumber);
+                    setConfirmationNumber(dataResponse.confirmationNumber); // Set confirmation number on success
+                } else {
+                    setErrorMessage("An error occurred while processing your order. Please try again.");
+                }
+            } catch (error) {
+                setErrorMessage("Network error. Please check your connection and try again.");
+            }
+        };
+
+        processOrder();
+    }, [order]);
 
     const navigate = useNavigate();
 
     const handleSumbit = (e) => {
         navigate('/home'); 
     }
-    console.log("view" + data.totalCost);
 
     return (
         <div className="container-fluid body">
             <Header />
             <div className="confirm-container">
             <div className="confirm-box">
-                <h3>Confirmation Number: 4859024321</h3>
+                {confirmationNumber ? (
+                <>
+                <h3>Confirmation Number: {confirmationNumber}</h3>
                 <h5>Total Paid: ${location.state.totalCost}</h5>
-                <h5>Payment Under: {location.state.order.card_holder_name}</h5>
-                <h5>Shipping Info: {location.state.order.address_1} {location.state.order.city} {location.state.order.state} {location.state.order.zip}</h5>
+                <h5>Payment Under: {order.card_holder_name}</h5>
+                <h5>Shipping Info: {order.address_1} {order.city} {order.state} {order.zip}</h5>
                 <button className='button' onClick={handleSumbit}>Done</button>
-            </div>
+                </>
+                ) : (
+                    <p> Processing your order ... </p>
+                )}
+                </div>
             </div>
             <Footer />
         </div>
