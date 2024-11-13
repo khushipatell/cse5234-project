@@ -31,7 +31,7 @@ const PaymentEntry = () => {
     // Define form fields configuration
     const formFields = [
         { label: 'Credit Card Number', type: 'text', key: 'credit_card_number' },
-        { label: 'Expiration Date', type: 'text', key: 'expiration_date' },
+        { label: 'Expiration Date', type: 'text', key: 'expir_date' },
         { label: 'CVV Code', type: 'text', key: 'cvvCode' },
         { label: 'Card Holder Name', type: 'text', key: 'card_holder_name' },
         { label: 'Email', type: 'text', key: 'customer_email' },
