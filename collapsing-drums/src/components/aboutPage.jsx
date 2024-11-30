@@ -5,6 +5,7 @@ import Header from "./header";
 import Footer from "./footer";
 import "../css/aboutPage.css";
 
+// Test comment
 const About = () => {
 
     const navigate = useNavigate();
