@@ -96,11 +96,11 @@ const About = () => {
                         <div className="exec col-12 mb-3">
                             <div className="exec-content">
                                 <div className="exec-header">
-                                    <img className="headshot rounded-circle" src="/img/placeholder.png" alt="Drishti's Headshot" />
+                                    <img className="headshot rounded-circle" src="/img/drishtiHeadshot.jpg" alt="Drishti's Headshot" />
                                     <h2 className="name">Drishti Mittal</h2>
                                 </div>
                                 <div className="exec-experience">
-                                    <p className="experience">INSERT EXPERIENCE</p>
+                                    <p className="experience">Drishti is a Computer Information Science student at the Ohio State University. She had two internships under Westfield Insurance as an Application Developer intern and IT Architecture intern. She is currently a Technology Intern at CAS. Drishti has taken many classes related to computer game design. Additionally, she has worked with front-end, back-end, and middleware technologies making her a good fit to manage the <i>Collapsing Drums</i> website.</p>
                                 </div>
                             </div>
                         </div>
