@@ -51,6 +51,7 @@ const Purchase = () => {
                         {data.map((item, index) => (
                             <div key={index} className="product-item">
                                 <p>{item.name}</p>
+                                <img className="product-image" src={item.image_file_path} alt={item.name} />
                                 <p>Cost: ${item.price}</p>
                                 <p>Available Quantity: {item.quantity}</p>
                                 <input
