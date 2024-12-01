@@ -107,11 +107,16 @@ const About = () => {
                         <div className="exec col-12 mb-3">
                             <div className="exec-content">
                                 <div className="exec-header">
-                                    <img className="headshot rounded-circle" src="/img/placeholder.png" alt="Khushi's Headshot" />
+                                    <img className="headshot rounded-circle" src="/img/Khushi Patel.png" alt="Khushi's Headshot" />
                                     <h2 className="name">Khushi Patel</h2>
                                 </div>
                                 <div className="exec-experience">
-                                    <p className="experience">INSERT EXPERIENCE</p>
+                                    <p className="experience"> Khushi is a Computer Science & Engineering major with a minor in Mathematics from The Ohio State University. 
+                                    Her experience includes working as a Data Science Intern at Keva Health, where she improved website engagement through SEO strategies and project optimization, 
+                                    and as a Repair Technician at OSU's TechHub, specializing in efficient Apple and Dell laptop repairs. 
+                                    Some key achievements include leading a team to enhance a health-tech website, developing over 50 technical repairs with a 95% success rate, 
+                                    and exploring entrepreneurial growth during her SWE Fellowship at HeadStarter AI. 
+                                    This strong background in data-driven decision-making, technical problem-solving, and teamwork makes her the perfect fit to manage innovative projects like the Collapsing Drums website.</p>
                                 </div>
                             </div>
                         </div>
