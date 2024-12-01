@@ -7,7 +7,7 @@ import "../css/merch.css";
 
 const Purchase = () => {
     const [order, setOrder] = useState({
-        buyQuantity: [0, 0, 0, 0, 0, 0, 0, 0],
+        buyQuantity: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         credit_card_number: '',
         expir_date: '',
         cvvCode: '',
@@ -57,14 +57,15 @@ const Purchase = () => {
                                 <input
                                     type="number"
                                     min="0"
-                                    required
+                                    value={order.buyQuantity[index] || 0} // Ensure a 0 if no value is entered
                                     onChange={(e) => {
                                         const newQuantities = [...order.buyQuantity];
-                                        newQuantities[index] = e.target.value; // Update quantity for the specific item
+                                        newQuantities[index] = e.target.value || 0; // Default to 0 if empty
                                         setOrder({ ...order, buyQuantity: newQuantities });
                                     }}
                                     placeholder="Quantity"
                                 />
+
                             </div>
                         ))}
                     </div>
