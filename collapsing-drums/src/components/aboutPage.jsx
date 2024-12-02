@@ -50,7 +50,7 @@ const About = () => {
                         <br></br>
                         Our strategy is centered around three core pillars that drive everything we do: 
                         <br></br>
-                        <b>Performing, Merchandising, and Engaging with our Fans.</b>
+                        <b>Inventory, Engagment, Support</b>
                     </h2>
                 </div>
 
